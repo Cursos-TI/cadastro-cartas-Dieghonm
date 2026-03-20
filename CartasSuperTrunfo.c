@@ -10,6 +10,7 @@ int main () {
     float Area1;
     float PIB1;
     int PontosTuristicos1;
+    
 // carta 2
     char Estado2[20];
     char Codigo2[10];
