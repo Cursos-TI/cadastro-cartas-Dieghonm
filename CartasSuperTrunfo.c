@@ -63,5 +63,17 @@ int main () {
     printf("PIB: %s = %.2f, %s = %.2f\n", NomeCidade1, PIB1, NomeCidade2, PIB2);
     printf("Pontos Turísticos: %s = %d, %s = %d\n", NomeCidade1, PontosTuristicos1, NomeCidade2, PontosTuristicos2);
 
-return 0;
+
+    //segunda parte Desafio: nível aventureiro
+
+    float Densidade1, PIBperCapta1, Densidade2, PIBperCapta2;
+
+    Densidade1 = (float)Populacao1 / Area1; //calculando a densidade demográfica da cidade 1, convertendo a população para float para evitar perda de precisão na divisão.
+    Densidade2= (float)Populacao2 / Area2;
+    PIBperCapta1 = (float) PIB1 / Populacao1;
+    PIBperCapta2 = (float) PIB2 / Populacao2;
+
+    printf("Densidade Demográfica: %s = %.2f hab/km², %s = %.2f hab/km²\n", NomeCidade1, Densidade1, NomeCidade2, Densidade2);
+    printf("PIB per Capita: %s = %.2f, %s = %.2f\n", NomeCidade1, PIBperCapta1, NomeCidade2, PIBperCapta2);
+
 } 
