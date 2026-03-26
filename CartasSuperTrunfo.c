@@ -6,7 +6,7 @@ int main () {
     char Estado1[20];
     char Codigo1[10];
     char NomeCidade1[50];
-    int Populacao1;
+    unsigned long int Populacao1;
     float Area1;
     float PIB1;
     int PontosTuristicos1;
@@ -15,7 +15,7 @@ int main () {
     char Estado2[20];
     char Codigo2[10];
     char NomeCidade2[50];
-    int Populacao2;
+    unsigned long int Populacao2;
     float Area2;
     float PIB2;
     int PontosTuristicos2;
@@ -64,6 +64,8 @@ int main () {
     printf("Pontos Turísticos: %s = %d, %s = %d\n", NomeCidade1, PontosTuristicos1, NomeCidade2, PontosTuristicos2);
 
 
+
+
     //segunda parte Desafio: nível aventureiro
 
     float Densidade1, PIBperCapta1, Densidade2, PIBperCapta2;
@@ -75,5 +77,22 @@ int main () {
 
     printf("Densidade Demográfica: %s = %.2f hab/km², %s = %.2f hab/km²\n", NomeCidade1, Densidade1, NomeCidade2, Densidade2);
     printf("PIB per Capita: %s = %.2f, %s = %.2f\n", NomeCidade1, PIBperCapta1, NomeCidade2, PIBperCapta2);
+
+    float superPoderA = PontosTuristicos1 * PIBperCapta1 / Densidade1; //calculando o super poder da cidade 1, multiplicando o número de pontos turísticos pelo PIB per capita e dividindo pela densidade demográfica.
+    float superPoderB = PontosTuristicos2 * PIBperCapta2 / Densidade2;
+
+    printf("Super Poder: %s = %.2f, %s = %.2f\n", NomeCidade1, superPoderA, NomeCidade2, superPoderB);
+    
+    //comparação das cartas
+    printf("\nComparação final:\n");
+    //comparação dos atributos individuais.
+    printf("A cidade com a maior população é: %s com %d habitantes\n", (Populacao1 > Populacao2) ? NomeCidade1 : NomeCidade2, (Populacao1 > Populacao2) ? Populacao1 : Populacao2);
+    printf("A cidade com a maior área é: %s com %.2f km²\n", (Area1 > Area2) ? NomeCidade1 : NomeCidade2, (Area1 > Area2) ? Area1 : Area2);
+    printf("A cidade com o maior número de pontos turísticos é: %s com %d pontos turísticos\n", (PontosTuristicos1 > PontosTuristicos2) ? NomeCidade1 : NomeCidade2, (PontosTuristicos1 > PontosTuristicos2) ? PontosTuristicos1 : PontosTuristicos2);
+    //comparação do PIB e da densidade demográfica.
+    printf("A cidade com o maior PIB é: %s com %.2f de PIB\n", (PIBperCapta1 > PIBperCapta2) ? NomeCidade1 : NomeCidade2, (PIBperCapta1 > PIBperCapta2) ? PIBperCapta1 : PIBperCapta2);
+    printf("A cidade com a maior densidade demográfica é: %s com %.2f hab/km²\n", (Densidade1 > Densidade2) ? NomeCidade1 : NomeCidade2, (Densidade1 > Densidade2) ? Densidade1 : Densidade2); 
+    //comparação final do super poder.
+    printf("A cidade com o maior super poder é: %s com %.2f de super poder", (superPoderA > superPoderB) ? NomeCidade1 : NomeCidade2, (superPoderA > superPoderB) ? superPoderA : superPoderB);
 
 } 
